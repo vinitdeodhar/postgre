@@ -1,0 +1,7 @@
+Success. You can now start the database server using:
+
+    postgres -D DemoDir
+or
+    pg_ctl -D DemoDir -l logfile start
+
+

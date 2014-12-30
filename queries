@@ -1,0 +1,31 @@
+CREATE TABLE supplier
+(
+sno int,
+sname varchar(25),
+PRIMARY KEY (sno)
+)
+
+
+CREATE TABLE parts
+(
+pno int,
+sno int,
+pname varchar(25),
+PRIMARY KEY (pno),
+FOREIGN KEY (sno) REFERENCES supplier(sno)
+)
+
+SELECT DISTINCT s.sno,s.sname,p.pno,p.pname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno; yes
+SELECT DISTINCT s.sname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno; yes
+SELECT DISTINCT s.sname FROM supplier s, parts p WHERE s.sno = p.sno; no
+
+
+EXPLAIN SELECT DISTINCT s.sno,s.sname,p.pno,p.pname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno; yes
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+backend> select * from test1 T, test1 U where T.a=U.a and U.a=T.a;
+
+Table name t 
+
+Table name u 
+
+ Operator : =
+Left Attr name a
+Left Attr relation t
+
+Right Attr name a
+Right Attr relation u
+
+ Operator : =
+Left Attr name a
+Left Attr relation u
+
+Right Attr name a
+Right Attr relation t
+	 1: a	(typeid = 23, len = 4, typmod = -1, byval = t)
+	 2: a	(typeid = 23, len = 4, typmod = -1, byval = t)
+	----

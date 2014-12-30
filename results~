@@ -1,0 +1,37 @@
+Normal db
+
+test=# EXPLAIN SELECT DISTINCT s.sno,s.sname,p.pno,p.pname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno;
+                              QUERY PLAN                               
+-----------------------------------------------------------------------
+ HashAggregate  (cost=9.54..9.62 rows=8 width=24)
+   ->  Nested Loop  (cost=0.00..9.46 rows=8 width=24)
+         ->  Seq Scan on supplier s  (cost=0.00..6.59 rows=1 width=14)
+               Filter: (sno = 1)
+         ->  Seq Scan on parts p  (cost=0.00..2.79 rows=8 width=14)
+               Filter: (sno = 1)
+(6 rows)
+
+test=# EXPLAIN SELECT s.sno,s.sname,p.pno,p.pname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno;
+                           QUERY PLAN                            
+-----------------------------------------------------------------
+ Nested Loop  (cost=0.00..9.46 rows=8 width=24)
+   ->  Seq Scan on supplier s  (cost=0.00..6.59 rows=1 width=14)
+         Filter: (sno = 1)
+   ->  Seq Scan on parts p  (cost=0.00..2.79 rows=8 width=14)
+         Filter: (sno = 1)
+(5 rows)
+
+
+Removing distinct
+
+
+EXPLAIN SELECT DISTINCT s.sno,s.sname,p.pno,p.pname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno;
+                           QUERY PLAN                            
+-----------------------------------------------------------------
+ Nested Loop  (cost=0.00..9.46 rows=8 width=24)
+   ->  Seq Scan on supplier s  (cost=0.00..6.59 rows=1 width=14)
+         Filter: (sno = 1)
+   ->  Seq Scan on parts p  (cost=0.00..2.79 rows=8 width=14)
+         Filter: (sno = 1)
+(5 rows)
+

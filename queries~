@@ -1,0 +1,641 @@
+CREATE TABLE supplier
+(
+sno int,
+sname varchar(25),
+PRIMARY KEY (sno)
+)
+
+
+CREATE TABLE parts
+(
+pno int,
+sno int,
+pname varchar(25),
+PRIMARY KEY (pno),
+FOREIGN KEY (sno) REFERENCES supplier(sno)
+)
+
+SELECT DISTINCT s.sno,s.sname,p.pno,p.pname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno; yes
+SELECT DISTINCT s.sname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno; yes
+SELECT DISTINCT s.sname FROM supplier s, parts p WHERE s.sno = p.sno; no
+
+
+EXPLAIN SELECT DISTINCT s.sno,s.sname,p.pno,p.pname FROM supplier s, parts p WHERE p.sno = 1 AND s.sno = p.sno; yes
+
+CREATE TABLE a
+(
+c int,
+d int,
+pname varchar(25),
+PRIMARY KEY (pno),
+FOREIGN KEY (sno) REFERENCES supplier(c,d)
+)
+
+
+CREATE TABLE b
+(
+c int,
+d int,
+pname varchar(25),
+PRIMARY KEY (d)
+)
+
+INSERT INTO supplier VALUES (1,'supplier1')
+
+INSERT INTO parts VALUES (1,1,'part1')
+
+CREATE TABLE Persons
+(
+P_Id int NOT NULL,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+PRIMARY KEY (P_Id)
+)
+
+
+
+
+
+
+
+INSERT INTO supplier VALUES (1,'supplier1');
+INSERT INTO supplier VALUES (2,'supplier1');
+INSERT INTO supplier VALUES (3,'supplier2');
+INSERT INTO supplier VALUES (4,'supplier3');
+INSERT INTO supplier VALUES (5,'supplier3');
+INSERT INTO supplier VALUES (6,'supplier3');
+INSERT INTO supplier VALUES (7,'supplier2');
+INSERT INTO supplier VALUES (8,'supplier2');
+
+INSERT INTO supplier VALUES (9,'supplier2');
+INSERT INTO supplier VALUES (10,'supplier3');
+INSERT INTO supplier VALUES (11,'supplier4');
+INSERT INTO supplier VALUES (12,'supplier4');
+INSERT INTO supplier VALUES (13,'supplier5');
+INSERT INTO supplier VALUES (14,'supplier5');
+INSERT INTO supplier VALUES (15,'supplier6');
+
+INSERT INTO supplier VALUES (16,'supplier4');
+INSERT INTO supplier VALUES (17,'supplier5');
+INSERT INTO supplier VALUES (18,'supplier6');
+INSERT INTO supplier VALUES (19,'supplier7');
+INSERT INTO supplier VALUES (20,'supplier7');
+INSERT INTO supplier VALUES (21,'supplier7');
+INSERT INTO supplier VALUES (22,'supplier7');
+INSERT INTO supplier VALUES (23,'supplier7');
+INSERT INTO supplier VALUES (24,'supplier1');
+INSERT INTO supplier VALUES (25,'supplier1');
+INSERT INTO supplier VALUES (26,'supplier8');
+INSERT INTO supplier VALUES (27,'supplier8');
+INSERT INTO supplier VALUES (28,'supplier1');
+INSERT INTO supplier VALUES (29,'supplier8');
+INSERT INTO supplier VALUES (30,'supplier1');
+INSERT INTO supplier VALUES (31,'supplier8');
+INSERT INTO supplier VALUES (32,'supplier1');
+INSERT INTO supplier VALUES (33,'supplier4');
+INSERT INTO supplier VALUES (34,'supplier1');
+INSERT INTO supplier VALUES (35,'supplier5');
+INSERT INTO supplier VALUES (36,'supplier1');
+INSERT INTO supplier VALUES (37,'supplier4');
+INSERT INTO supplier VALUES (38,'supplier3');
+INSERT INTO supplier VALUES (39,'supplier1');
+INSERT INTO supplier VALUES (40,'supplier2');
+
+INSERT INTO supplier VALUES (41,'supplier1');
+INSERT INTO supplier VALUES (42,'supplier9');
+
+INSERT INTO supplier VALUES (43,'supplier2');
+INSERT INTO supplier VALUES (44,'supplier2');
+INSERT INTO supplier VALUES (45,'supplier2');
+
+INSERT INTO supplier VALUES (46,'supplier1');
+INSERT INTO supplier VALUES (47,'supplier3');
+
+INSERT INTO supplier VALUES (48,'supplier3');
+INSERT INTO supplier VALUES (49,'supplier1');
+
+INSERT INTO supplier VALUES (50,'supplier3');
+
+INSERT INTO supplier VALUES (51,'supplier3');
+INSERT INTO supplier VALUES (52,'supplier3');
+
+INSERT INTO supplier VALUES (53,'supplier3');
+INSERT INTO supplier VALUES (54,'supplier1');
+
+INSERT INTO supplier VALUES (55,'supplier3');
+
+
+
+
+INSERT INTO parts VALUES (1,1,'part9')
+INSERT INTO parts VALUES (2,1,'part1');
+INSERT INTO parts VALUES (3,2,'part1');
+INSERT INTO parts VALUES (4,3,'part2');
+INSERT INTO parts VALUES (5,4,'part2');
+INSERT INTO parts VALUES (6,2,'part2');
+INSERT INTO parts VALUES (7,5,'part1');
+INSERT INTO parts VALUES (8,6,'part1');
+INSERT INTO parts VALUES (9,11,'part5');
+INSERT INTO parts VALUES (10,12,'part1');
+INSERT INTO parts VALUES (11,13,'part1');
+INSERT INTO parts VALUES (12,13,'part5');
+INSERT INTO parts VALUES (13,15,'part1');
+INSERT INTO parts VALUES (14,16,'part5');
+INSERT INTO parts VALUES (15,11,'part5');
+INSERT INTO parts VALUES (16,12,'part5');
+INSERT INTO parts VALUES (17,21,'part1');
+INSERT INTO parts VALUES (18,21,'part1');
+INSERT INTO parts VALUES (19,21,'part1');
+INSERT INTO parts VALUES (20,23,'part1');
+INSERT INTO parts VALUES (21,23,'part3');
+INSERT INTO parts VALUES (22,12,'part3');
+INSERT INTO parts VALUES (23,27,'part3');
+INSERT INTO parts VALUES (24,33,'part3');
+INSERT INTO parts VALUES (25,31,'part3');
+INSERT INTO parts VALUES (26,27,'part2');
+INSERT INTO parts VALUES (27,40,'part1');
+INSERT INTO parts VALUES (28,37,'part1');
+INSERT INTO parts VALUES (29,40,'part1');
+INSERT INTO parts VALUES (30,37,'part2');
+INSERT INTO parts VALUES (31,31,'part1');
+INSERT INTO parts VALUES (32,31,'part1');
+INSERT INTO parts VALUES (33,41,'part2');
+INSERT INTO parts VALUES (34,41,'part1');
+INSERT INTO parts VALUES (35,12,'part2');
+INSERT INTO parts VALUES (36,12,'part1');
+INSERT INTO parts VALUES (37,18,'part2');
+INSERT INTO parts VALUES (38,1,'part1');
+INSERT INTO parts VALUES (39,18,'part11');
+INSERT INTO parts VALUES (40,14,'part1');
+INSERT INTO parts VALUES (41,21,'part11');
+INSERT INTO parts VALUES (42,39,'part1');
+INSERT INTO parts VALUES (43,40,'part1');
+INSERT INTO parts VALUES (44,41,'part1');
+INSERT INTO parts VALUES (45,45,'part1');
+INSERT INTO parts VALUES (46,45,'part11');
+INSERT INTO parts VALUES (47,23,'part11');
+INSERT INTO parts VALUES (48,21,'part11');
+INSERT INTO parts VALUES (49,5,'part2');
+INSERT INTO parts VALUES (50,8,'part1');
+
+
+
+
+INSERT INTO parts VALUES (51,11,'part11');
+INSERT INTO parts VALUES (52,12,'part12');
+INSERT INTO parts VALUES (53,13,'part13');
+INSERT INTO parts VALUES (54,14,'part14');
+INSERT INTO parts VALUES (55,15,'part15');
+INSERT INTO parts VALUES (56,16,'part16');
+INSERT INTO parts VALUES (57,17,'part17');
+INSERT INTO parts VALUES (58,18,'part18');
+INSERT INTO parts VALUES (59,19,'part19');
+INSERT INTO parts VALUES (60,0,'part0');
+INSERT INTO parts VALUES (61,1,'part1');
+INSERT INTO parts VALUES (62,2,'part2');
+INSERT INTO parts VALUES (63,3,'part3');
+INSERT INTO parts VALUES (64,4,'part4');
+INSERT INTO parts VALUES (65,5,'part5');
+INSERT INTO parts VALUES (66,6,'part6');
+INSERT INTO parts VALUES (67,7,'part7');
+INSERT INTO parts VALUES (68,8,'part8');
+INSERT INTO parts VALUES (69,9,'part9');
+INSERT INTO parts VALUES (70,10,'part10');
+INSERT INTO parts VALUES (71,11,'part11');
+INSERT INTO parts VALUES (72,12,'part12');
+INSERT INTO parts VALUES (73,13,'part13');
+INSERT INTO parts VALUES (74,14,'part14');
+INSERT INTO parts VALUES (75,15,'part15');
+INSERT INTO parts VALUES (76,16,'part16');
+INSERT INTO parts VALUES (77,17,'part17');
+INSERT INTO parts VALUES (78,18,'part18');
+INSERT INTO parts VALUES (79,19,'part19');
+INSERT INTO parts VALUES (80,0,'part0');
+INSERT INTO parts VALUES (81,1,'part1');
+INSERT INTO parts VALUES (82,2,'part2');
+INSERT INTO parts VALUES (83,3,'part3');
+INSERT INTO parts VALUES (84,4,'part4');
+INSERT INTO parts VALUES (85,5,'part5');
+INSERT INTO parts VALUES (86,6,'part6');
+INSERT INTO parts VALUES (87,7,'part7');
+INSERT INTO parts VALUES (88,8,'part8');
+INSERT INTO parts VALUES (89,9,'part9');
+INSERT INTO parts VALUES (90,10,'part10');
+INSERT INTO parts VALUES (91,11,'part11');
+INSERT INTO parts VALUES (92,12,'part12');
+INSERT INTO parts VALUES (93,13,'part13');
+INSERT INTO parts VALUES (94,14,'part14');
+INSERT INTO parts VALUES (95,15,'part15');
+INSERT INTO parts VALUES (96,16,'part16');
+INSERT INTO parts VALUES (97,17,'part17');
+INSERT INTO parts VALUES (98,18,'part18');
+INSERT INTO parts VALUES (99,19,'part19');
+INSERT INTO parts VALUES (100,0,'part0');
+INSERT INTO parts VALUES (101,1,'part1');
+INSERT INTO parts VALUES (102,2,'part2');
+INSERT INTO parts VALUES (103,3,'part3');
+INSERT INTO parts VALUES (104,4,'part4');
+INSERT INTO parts VALUES (105,5,'part5');
+INSERT INTO parts VALUES (106,6,'part6');
+INSERT INTO parts VALUES (107,7,'part7');
+INSERT INTO parts VALUES (108,8,'part8');
+INSERT INTO parts VALUES (109,9,'part9');
+INSERT INTO parts VALUES (110,10,'part10');
+INSERT INTO parts VALUES (111,11,'part11');
+INSERT INTO parts VALUES (112,12,'part12');
+INSERT INTO parts VALUES (113,13,'part13');
+INSERT INTO parts VALUES (114,14,'part14');
+INSERT INTO parts VALUES (115,15,'part15');
+INSERT INTO parts VALUES (116,16,'part16');
+INSERT INTO parts VALUES (117,17,'part17');
+INSERT INTO parts VALUES (118,18,'part18');
+INSERT INTO parts VALUES (119,19,'part19');
+INSERT INTO parts VALUES (120,0,'part0');
+INSERT INTO parts VALUES (121,1,'part1');
+INSERT INTO parts VALUES (122,2,'part2');
+INSERT INTO parts VALUES (123,3,'part3');
+INSERT INTO parts VALUES (124,4,'part4');
+INSERT INTO parts VALUES (125,5,'part5');
+INSERT INTO parts VALUES (126,6,'part6');
+INSERT INTO parts VALUES (127,7,'part7');
+INSERT INTO parts VALUES (128,8,'part8');
+INSERT INTO parts VALUES (129,9,'part9');
+INSERT INTO parts VALUES (130,10,'part10');
+INSERT INTO parts VALUES (131,11,'part11');
+INSERT INTO parts VALUES (132,12,'part12');
+INSERT INTO parts VALUES (133,13,'part13');
+INSERT INTO parts VALUES (134,14,'part14');
+INSERT INTO parts VALUES (135,15,'part15');
+INSERT INTO parts VALUES (136,16,'part16');
+INSERT INTO parts VALUES (137,17,'part17');
+INSERT INTO parts VALUES (138,18,'part18');
+INSERT INTO parts VALUES (139,19,'part19');
+INSERT INTO parts VALUES (140,0,'part0');
+INSERT INTO parts VALUES (141,1,'part1');
+INSERT INTO parts VALUES (142,2,'part2');
+INSERT INTO parts VALUES (143,3,'part3');
+INSERT INTO parts VALUES (144,4,'part4');
+INSERT INTO parts VALUES (145,5,'part5');
+INSERT INTO parts VALUES (146,6,'part6');
+INSERT INTO parts VALUES (147,7,'part7');
+INSERT INTO parts VALUES (148,8,'part8');
+INSERT INTO parts VALUES (149,9,'part9');
+INSERT INTO parts VALUES (150,10,'part10');
+INSERT INTO parts VALUES (151,11,'part11');
+INSERT INTO parts VALUES (152,12,'part12');
+INSERT INTO parts VALUES (153,13,'part13');
+INSERT INTO parts VALUES (154,14,'part14');
+INSERT INTO parts VALUES (155,15,'part15');
+INSERT INTO parts VALUES (156,16,'part16');
+INSERT INTO parts VALUES (157,17,'part17');
+INSERT INTO parts VALUES (158,18,'part18');
+INSERT INTO parts VALUES (159,19,'part19');
+INSERT INTO parts VALUES (160,0,'part0');
+INSERT INTO parts VALUES (161,1,'part1');
+INSERT INTO parts VALUES (162,2,'part2');
+INSERT INTO parts VALUES (163,3,'part3');
+INSERT INTO parts VALUES (164,4,'part4');
+INSERT INTO parts VALUES (165,5,'part5');
+INSERT INTO parts VALUES (166,6,'part6');
+INSERT INTO parts VALUES (167,7,'part7');
+INSERT INTO parts VALUES (168,8,'part8');
+INSERT INTO parts VALUES (169,9,'part9');
+INSERT INTO parts VALUES (170,10,'part10');
+INSERT INTO parts VALUES (171,11,'part11');
+INSERT INTO parts VALUES (172,12,'part12');
+INSERT INTO parts VALUES (173,13,'part13');
+INSERT INTO parts VALUES (174,14,'part14');
+INSERT INTO parts VALUES (175,15,'part15');
+INSERT INTO parts VALUES (176,16,'part16');
+INSERT INTO parts VALUES (177,17,'part17');
+INSERT INTO parts VALUES (178,18,'part18');
+INSERT INTO parts VALUES (179,19,'part19');
+INSERT INTO parts VALUES (180,0,'part0');
+INSERT INTO parts VALUES (181,1,'part1');
+INSERT INTO parts VALUES (182,2,'part2');
+INSERT INTO parts VALUES (183,3,'part3');
+INSERT INTO parts VALUES (184,4,'part4');
+INSERT INTO parts VALUES (185,5,'part5');
+INSERT INTO parts VALUES (186,6,'part6');
+INSERT INTO parts VALUES (187,7,'part7');
+INSERT INTO parts VALUES (188,8,'part8');
+INSERT INTO parts VALUES (189,9,'part9');
+INSERT INTO parts VALUES (190,10,'part10');
+INSERT INTO parts VALUES (191,11,'part11');
+INSERT INTO parts VALUES (192,12,'part12');
+INSERT INTO parts VALUES (193,13,'part13');
+INSERT INTO parts VALUES (194,14,'part14');
+INSERT INTO parts VALUES (195,15,'part15');
+INSERT INTO parts VALUES (196,16,'part16');
+INSERT INTO parts VALUES (197,17,'part17');
+INSERT INTO parts VALUES (198,18,'part18');
+INSERT INTO parts VALUES (199,19,'part19');
+INSERT INTO parts VALUES (200,0,'part0');
+INSERT INTO parts VALUES (201,1,'part1');
+INSERT INTO parts VALUES (202,2,'part2');
+INSERT INTO parts VALUES (203,3,'part3');
+INSERT INTO parts VALUES (204,4,'part4');
+INSERT INTO parts VALUES (205,5,'part5');
+INSERT INTO parts VALUES (206,6,'part6');
+INSERT INTO parts VALUES (207,7,'part7');
+INSERT INTO parts VALUES (208,8,'part8');
+INSERT INTO parts VALUES (209,9,'part9');
+INSERT INTO parts VALUES (210,10,'part10');
+INSERT INTO parts VALUES (211,11,'part11');
+INSERT INTO parts VALUES (212,12,'part12');
+INSERT INTO parts VALUES (213,13,'part13');
+INSERT INTO parts VALUES (214,14,'part14');
+INSERT INTO parts VALUES (215,15,'part15');
+INSERT INTO parts VALUES (216,16,'part16');
+INSERT INTO parts VALUES (217,17,'part17');
+INSERT INTO parts VALUES (218,18,'part18');
+INSERT INTO parts VALUES (219,19,'part19');
+INSERT INTO parts VALUES (220,0,'part0');
+INSERT INTO parts VALUES (221,1,'part1');
+INSERT INTO parts VALUES (222,2,'part2');
+INSERT INTO parts VALUES (223,3,'part3');
+INSERT INTO parts VALUES (224,4,'part4');
+INSERT INTO parts VALUES (225,5,'part5');
+INSERT INTO parts VALUES (226,6,'part6');
+INSERT INTO parts VALUES (227,7,'part7');
+INSERT INTO parts VALUES (228,8,'part8');
+INSERT INTO parts VALUES (229,9,'part9');
+INSERT INTO parts VALUES (230,10,'part10');
+INSERT INTO parts VALUES (231,11,'part11');
+INSERT INTO parts VALUES (232,12,'part12');
+INSERT INTO parts VALUES (233,13,'part13');
+INSERT INTO parts VALUES (234,14,'part14');
+INSERT INTO parts VALUES (235,15,'part15');
+INSERT INTO parts VALUES (236,16,'part16');
+INSERT INTO parts VALUES (237,17,'part17');
+INSERT INTO parts VALUES (238,18,'part18');
+INSERT INTO parts VALUES (239,19,'part19');
+INSERT INTO parts VALUES (240,0,'part0');
+INSERT INTO parts VALUES (241,1,'part1');
+INSERT INTO parts VALUES (242,2,'part2');
+INSERT INTO parts VALUES (243,3,'part3');
+INSERT INTO parts VALUES (244,4,'part4');
+INSERT INTO parts VALUES (245,5,'part5');
+INSERT INTO parts VALUES (246,6,'part6');
+INSERT INTO parts VALUES (247,7,'part7');
+INSERT INTO parts VALUES (248,8,'part8');
+INSERT INTO parts VALUES (249,9,'part9');
+INSERT INTO parts VALUES (250,10,'part10');
+INSERT INTO parts VALUES (251,11,'part11');
+INSERT INTO parts VALUES (252,12,'part12');
+INSERT INTO parts VALUES (253,13,'part13');
+INSERT INTO parts VALUES (254,14,'part14');
+INSERT INTO parts VALUES (255,15,'part15');
+INSERT INTO parts VALUES (256,16,'part16');
+INSERT INTO parts VALUES (257,17,'part17');
+INSERT INTO parts VALUES (258,18,'part18');
+INSERT INTO parts VALUES (259,19,'part19');
+INSERT INTO parts VALUES (260,0,'part0');
+INSERT INTO parts VALUES (261,1,'part1');
+INSERT INTO parts VALUES (262,2,'part2');
+INSERT INTO parts VALUES (263,3,'part3');
+INSERT INTO parts VALUES (264,4,'part4');
+INSERT INTO parts VALUES (265,5,'part5');
+INSERT INTO parts VALUES (266,6,'part6');
+INSERT INTO parts VALUES (267,7,'part7');
+INSERT INTO parts VALUES (268,8,'part8');
+INSERT INTO parts VALUES (269,9,'part9');
+INSERT INTO parts VALUES (270,10,'part10');
+INSERT INTO parts VALUES (271,11,'part11');
+INSERT INTO parts VALUES (272,12,'part12');
+INSERT INTO parts VALUES (273,13,'part13');
+INSERT INTO parts VALUES (274,14,'part14');
+INSERT INTO parts VALUES (275,15,'part15');
+INSERT INTO parts VALUES (276,16,'part16');
+INSERT INTO parts VALUES (277,17,'part17');
+INSERT INTO parts VALUES (278,18,'part18');
+INSERT INTO parts VALUES (279,19,'part19');
+INSERT INTO parts VALUES (280,0,'part0');
+INSERT INTO parts VALUES (281,1,'part1');
+INSERT INTO parts VALUES (282,2,'part2');
+INSERT INTO parts VALUES (283,3,'part3');
+INSERT INTO parts VALUES (284,4,'part4');
+INSERT INTO parts VALUES (285,5,'part5');
+INSERT INTO parts VALUES (286,6,'part6');
+INSERT INTO parts VALUES (287,7,'part7');
+INSERT INTO parts VALUES (288,8,'part8');
+INSERT INTO parts VALUES (289,9,'part9');
+INSERT INTO parts VALUES (290,10,'part10');
+INSERT INTO parts VALUES (291,11,'part11');
+INSERT INTO parts VALUES (292,12,'part12');
+INSERT INTO parts VALUES (293,13,'part13');
+INSERT INTO parts VALUES (294,14,'part14');
+INSERT INTO parts VALUES (295,15,'part15');
+INSERT INTO parts VALUES (296,16,'part16');
+INSERT INTO parts VALUES (297,17,'part17');
+INSERT INTO parts VALUES (298,18,'part18');
+INSERT INTO parts VALUES (299,19,'part19');
+INSERT INTO parts VALUES (300,0,'part0');
+INSERT INTO parts VALUES (301,1,'part1');
+INSERT INTO parts VALUES (302,2,'part2');
+INSERT INTO parts VALUES (303,3,'part3');
+INSERT INTO parts VALUES (304,4,'part4');
+INSERT INTO parts VALUES (305,5,'part5');
+INSERT INTO parts VALUES (306,6,'part6');
+INSERT INTO parts VALUES (307,7,'part7');
+INSERT INTO parts VALUES (308,8,'part8');
+INSERT INTO parts VALUES (309,9,'part9');
+INSERT INTO parts VALUES (310,10,'part10');
+INSERT INTO parts VALUES (311,11,'part11');
+INSERT INTO parts VALUES (312,12,'part12');
+INSERT INTO parts VALUES (313,13,'part13');
+INSERT INTO parts VALUES (314,14,'part14');
+INSERT INTO parts VALUES (315,15,'part15');
+INSERT INTO parts VALUES (316,16,'part16');
+INSERT INTO parts VALUES (317,17,'part17');
+INSERT INTO parts VALUES (318,18,'part18');
+INSERT INTO parts VALUES (319,19,'part19');
+INSERT INTO parts VALUES (320,0,'part0');
+INSERT INTO parts VALUES (321,1,'part1');
+INSERT INTO parts VALUES (322,2,'part2');
+INSERT INTO parts VALUES (323,3,'part3');
+INSERT INTO parts VALUES (324,4,'part4');
+INSERT INTO parts VALUES (325,5,'part5');
+INSERT INTO parts VALUES (326,6,'part6');
+INSERT INTO parts VALUES (327,7,'part7');
+INSERT INTO parts VALUES (328,8,'part8');
+INSERT INTO parts VALUES (329,9,'part9');
+INSERT INTO parts VALUES (330,10,'part10');
+INSERT INTO parts VALUES (331,11,'part11');
+INSERT INTO parts VALUES (332,12,'part12');
+INSERT INTO parts VALUES (333,13,'part13');
+INSERT INTO parts VALUES (334,14,'part14');
+INSERT INTO parts VALUES (335,15,'part15');
+INSERT INTO parts VALUES (336,16,'part16');
+INSERT INTO parts VALUES (337,17,'part17');
+INSERT INTO parts VALUES (338,18,'part18');
+INSERT INTO parts VALUES (339,19,'part19');
+INSERT INTO parts VALUES (340,0,'part0');
+INSERT INTO parts VALUES (341,1,'part1');
+INSERT INTO parts VALUES (342,2,'part2');
+INSERT INTO parts VALUES (343,3,'part3');
+INSERT INTO parts VALUES (344,4,'part4');
+INSERT INTO parts VALUES (345,5,'part5');
+INSERT INTO parts VALUES (346,6,'part6');
+INSERT INTO parts VALUES (347,7,'part7');
+INSERT INTO parts VALUES (348,8,'part8');
+INSERT INTO parts VALUES (349,9,'part9');
+INSERT INTO parts VALUES (350,10,'part10');
+INSERT INTO parts VALUES (351,11,'part11');
+INSERT INTO parts VALUES (352,12,'part12');
+INSERT INTO parts VALUES (353,13,'part13');
+INSERT INTO parts VALUES (354,14,'part14');
+INSERT INTO parts VALUES (355,15,'part15');
+INSERT INTO parts VALUES (356,16,'part16');
+INSERT INTO parts VALUES (357,17,'part17');
+INSERT INTO parts VALUES (358,18,'part18');
+INSERT INTO parts VALUES (359,19,'part19');
+INSERT INTO parts VALUES (360,0,'part0');
+INSERT INTO parts VALUES (361,1,'part1');
+INSERT INTO parts VALUES (362,2,'part2');
+INSERT INTO parts VALUES (363,3,'part3');
+INSERT INTO parts VALUES (364,4,'part4');
+INSERT INTO parts VALUES (365,5,'part5');
+INSERT INTO parts VALUES (366,6,'part6');
+INSERT INTO parts VALUES (367,7,'part7');
+INSERT INTO parts VALUES (368,8,'part8');
+INSERT INTO parts VALUES (369,9,'part9');
+INSERT INTO parts VALUES (370,10,'part10');
+INSERT INTO parts VALUES (371,11,'part11');
+INSERT INTO parts VALUES (372,12,'part12');
+INSERT INTO parts VALUES (373,13,'part13');
+INSERT INTO parts VALUES (374,14,'part14');
+INSERT INTO parts VALUES (375,15,'part15');
+INSERT INTO parts VALUES (376,16,'part16');
+INSERT INTO parts VALUES (377,17,'part17');
+INSERT INTO parts VALUES (378,18,'part18');
+INSERT INTO parts VALUES (379,19,'part19');
+INSERT INTO parts VALUES (380,0,'part0');
+INSERT INTO parts VALUES (381,1,'part1');
+INSERT INTO parts VALUES (382,2,'part2');
+INSERT INTO parts VALUES (383,3,'part3');
+INSERT INTO parts VALUES (384,4,'part4');
+INSERT INTO parts VALUES (385,5,'part5');
+INSERT INTO parts VALUES (386,6,'part6');
+INSERT INTO parts VALUES (387,7,'part7');
+INSERT INTO parts VALUES (388,8,'part8');
+INSERT INTO parts VALUES (389,9,'part9');
+INSERT INTO parts VALUES (390,10,'part10');
+INSERT INTO parts VALUES (391,11,'part11');
+INSERT INTO parts VALUES (392,12,'part12');
+INSERT INTO parts VALUES (393,13,'part13');
+INSERT INTO parts VALUES (394,14,'part14');
+INSERT INTO parts VALUES (395,15,'part15');
+INSERT INTO parts VALUES (396,16,'part16');
+INSERT INTO parts VALUES (397,17,'part17');
+INSERT INTO parts VALUES (398,18,'part18');
+INSERT INTO parts VALUES (399,19,'part19');
+INSERT INTO parts VALUES (400,0,'part0');
+INSERT INTO parts VALUES (401,1,'part1');
+INSERT INTO parts VALUES (402,2,'part2');
+INSERT INTO parts VALUES (403,3,'part3');
+INSERT INTO parts VALUES (404,4,'part4');
+INSERT INTO parts VALUES (405,5,'part5');
+INSERT INTO parts VALUES (406,6,'part6');
+INSERT INTO parts VALUES (407,7,'part7');
+INSERT INTO parts VALUES (408,8,'part8');
+INSERT INTO parts VALUES (409,9,'part9');
+INSERT INTO parts VALUES (410,10,'part10');
+INSERT INTO parts VALUES (411,11,'part11');
+INSERT INTO parts VALUES (412,12,'part12');
+INSERT INTO parts VALUES (413,13,'part13');
+INSERT INTO parts VALUES (414,14,'part14');
+INSERT INTO parts VALUES (415,15,'part15');
+INSERT INTO parts VALUES (416,16,'part16');
+INSERT INTO parts VALUES (417,17,'part17');
+INSERT INTO parts VALUES (418,18,'part18');
+INSERT INTO parts VALUES (419,19,'part19');
+INSERT INTO parts VALUES (420,0,'part0');
+INSERT INTO parts VALUES (421,1,'part1');
+INSERT INTO parts VALUES (422,2,'part2');
+INSERT INTO parts VALUES (423,3,'part3');
+INSERT INTO parts VALUES (424,4,'part4');
+INSERT INTO parts VALUES (425,5,'part5');
+INSERT INTO parts VALUES (426,6,'part6');
+INSERT INTO parts VALUES (427,7,'part7');
+INSERT INTO parts VALUES (428,8,'part8');
+INSERT INTO parts VALUES (429,9,'part9');
+INSERT INTO parts VALUES (430,10,'part10');
+INSERT INTO parts VALUES (431,11,'part11');
+INSERT INTO parts VALUES (432,12,'part12');
+INSERT INTO parts VALUES (433,13,'part13');
+INSERT INTO parts VALUES (434,14,'part14');
+INSERT INTO parts VALUES (435,15,'part15');
+INSERT INTO parts VALUES (436,16,'part16');
+INSERT INTO parts VALUES (437,17,'part17');
+INSERT INTO parts VALUES (438,18,'part18');
+INSERT INTO parts VALUES (439,19,'part19');
+INSERT INTO parts VALUES (440,0,'part0');
+INSERT INTO parts VALUES (441,1,'part1');
+INSERT INTO parts VALUES (442,2,'part2');
+INSERT INTO parts VALUES (443,3,'part3');
+INSERT INTO parts VALUES (444,4,'part4');
+INSERT INTO parts VALUES (445,5,'part5');
+INSERT INTO parts VALUES (446,6,'part6');
+INSERT INTO parts VALUES (447,7,'part7');
+INSERT INTO parts VALUES (448,8,'part8');
+INSERT INTO parts VALUES (449,9,'part9');
+INSERT INTO parts VALUES (450,10,'part10');
+INSERT INTO parts VALUES (451,11,'part11');
+INSERT INTO parts VALUES (452,12,'part12');
+INSERT INTO parts VALUES (453,13,'part13');
+INSERT INTO parts VALUES (454,14,'part14');
+INSERT INTO parts VALUES (455,15,'part15');
+INSERT INTO parts VALUES (456,16,'part16');
+INSERT INTO parts VALUES (457,17,'part17');
+INSERT INTO parts VALUES (458,18,'part18');
+INSERT INTO parts VALUES (459,19,'part19');
+INSERT INTO parts VALUES (460,0,'part0');
+INSERT INTO parts VALUES (461,1,'part1');
+INSERT INTO parts VALUES (462,2,'part2');
+INSERT INTO parts VALUES (463,3,'part3');
+INSERT INTO parts VALUES (464,4,'part4');
+INSERT INTO parts VALUES (465,5,'part5');
+INSERT INTO parts VALUES (466,6,'part6');
+INSERT INTO parts VALUES (467,7,'part7');
+INSERT INTO parts VALUES (468,8,'part8');
+INSERT INTO parts VALUES (469,9,'part9');
+INSERT INTO parts VALUES (470,10,'part10');
+INSERT INTO parts VALUES (471,11,'part11');
+INSERT INTO parts VALUES (472,12,'part12');
+INSERT INTO parts VALUES (473,13,'part13');
+INSERT INTO parts VALUES (474,14,'part14');
+INSERT INTO parts VALUES (475,15,'part15');
+INSERT INTO parts VALUES (476,16,'part16');
+INSERT INTO parts VALUES (477,17,'part17');
+INSERT INTO parts VALUES (478,18,'part18');
+INSERT INTO parts VALUES (479,19,'part19');
+INSERT INTO parts VALUES (480,0,'part0');
+INSERT INTO parts VALUES (481,1,'part1');
+INSERT INTO parts VALUES (482,2,'part2');
+INSERT INTO parts VALUES (483,3,'part3');
+INSERT INTO parts VALUES (484,4,'part4');
+INSERT INTO parts VALUES (485,5,'part5');
+INSERT INTO parts VALUES (486,6,'part6');
+INSERT INTO parts VALUES (487,7,'part7');
+INSERT INTO parts VALUES (488,8,'part8');
+INSERT INTO parts VALUES (489,9,'part9');
+INSERT INTO parts VALUES (490,10,'part10');
+INSERT INTO parts VALUES (491,11,'part11');
+INSERT INTO parts VALUES (492,12,'part12');
+INSERT INTO parts VALUES (493,13,'part13');
+INSERT INTO parts VALUES (494,14,'part14');
+INSERT INTO parts VALUES (495,15,'part15');
+INSERT INTO parts VALUES (496,16,'part16');
+INSERT INTO parts VALUES (497,17,'part17');
+INSERT INTO parts VALUES (498,18,'part18');
+INSERT INTO parts VALUES (499,19,'part19');
+
+
+
+
+
+
+
